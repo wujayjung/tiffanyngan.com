@@ -24,7 +24,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: center; 
       min-height: 100vh;
       padding: 2rem;
       text-align: center;
@@ -102,6 +102,45 @@
       color: #bbb;
       margin-top: 1.4rem;
     }
+
+    .bio {
+      margin-top: 4rem;
+      text-align: left;
+    }
+
+    .bio p {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.2rem;
+      line-height: 1.85;
+      color: #3a3a3a;
+      margin-bottom: 1.2rem;
+    }
+
+    .bio p span.highlight {
+      font-style: italic;
+      color: #1a1a1a;
+    }
+
+    .bio-divider {
+      width: 40px;
+      height: 1px;
+      background: #d4c9bc;
+      margin: 3rem 0;
+    }
+
+    .sleep-section {
+      text-align: center;
+    }
+
+    .sleep-section p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -109,14 +148,41 @@
     <p class="eyebrow">tiffanyngan.com</p>
 
     <h1>Welcome.</h1>
-    <h1>Introducing <em>Tiffany Ngan</em></h1>
-    <h1>Y** Y*</h1>
+    <h1>Introducing <em>Tiffany Ngan YY</em></h1>
+
 
     <div class="divider"></div>
 
     <div class="cat-wrapper">
       <img src="white-cat.png" alt="A very important cat">
-      <p class="cat-caption">her spirit animal</p>
+      <p class="cat-caption">this is me!</p>
+    </div>
+
+    <div class="bio">
+      <p>
+        Hi. I'm <span class="highlight">Tiffany Ngan YY</span> — and yes, I know what you're thinking.
+        "She looks upset." I'm not upset. This is just my face. It's called having <span class="highlight">high standards</span>.
+      </p>
+      <p>
+        I was born in <span class="highlight">May 2002</span>, making me a Taurus, which basically means I'm
+        right about everything. I'm half mainland Chinese, half Indian — double the culture,
+        double the work ethic, and honestly? Double the beauty.
+      </p>
+      <p>
+        Speaking of which — I am <span class="highlight">hardworking, smart, and objectively beautiful</span>.
+        I don't say this with arrogance. I say it with the quiet confidence of someone who has
+        simply looked in a mirror and done the math.
+      </p>
+
+      <div class="bio-divider"></div>
+
+      <div class="sleep-section">
+        <p>I may look angry most of the time... but I sleep like this.</p>
+        <div class="cat-wrapper">
+          <img src="sleeping-princess-cat.png" alt="Sleeping like a princess">
+          <p class="cat-caption">a princess at rest</p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
