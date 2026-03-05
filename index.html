@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiffany Ngan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: #faf8f5;
+      color: #1a1a1a;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      line-height: 1.25;
+      color: #1a1a1a;
+      margin-bottom: 0.4rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: #555;
+    }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.05rem;
+      color: #aaa;
+      margin-bottom: 3rem;
+      letter-spacing: 0.03em;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: #d4c9bc;
+      margin: 0 auto 3rem;
+    }
+
+    .cat-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .cat-wrapper img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+      filter: grayscale(15%) contrast(1.02);
+      box-shadow:
+        0 0 0 1px #e8e0d6,
+        0 8px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .cat-caption {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-top: 1.4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="eyebrow">tiffanyngan.com</p>
+
+    <h1>Welcome.</h1>
+    <h1>Introducing <em>Tiffany Ngan</em></h1>
+    <h1>Y** Y*</h1>
+
+    <div class="divider"></div>
+
+    <div class="cat-wrapper">
+      <img src="white-cat.png" alt="A very important cat">
+      <p class="cat-caption">her spirit animal</p>
+    </div>
+  </div>
+</body>
+</html>
