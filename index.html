@@ -143,6 +143,45 @@
       color: #888;
       margin-bottom: 2rem;
     }
+
+    .gallery-section {
+      margin-top: 5rem;
+    }
+
+    .gallery-section > p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.1rem;
+      color: #888;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .gallery-grid .tile {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #ede8e2;
+    }
+
+    .gallery-grid .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .gallery-grid .tile img:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -172,6 +211,37 @@
         </div>
       </div>
     </div>
+
+    <div class="gallery-section">
+      <p>things that deeply resonate with me.</p>
+      <div class="gallery-grid">
+        <div class="tile">
+          <img src="images/angycat.png" alt="angy cat" style="object-position: center center;">
+        </div>
+        <div class="tile">
+          <img src="images/princesscat.png" alt="princess cat" style="object-position: center 30%;">
+        </div>
+        <div class="tile">
+          <img src="images/pinksweatercat.png" alt="pink sweater cat" style="object-position: center 38%;">
+        </div>
+        <div class="tile">
+          <img src="images/hatcat.png" alt="hat cat" style="object-position: center 38%;">
+        </div>
+        <div class="tile">
+          <img src="images/kingcat.png" alt="king cat" style="object-position: center 38%;">
+        </div>
+        <div class="tile">
+          <img src="images/carcat.png" alt="car cat" style="object-position: center 42%;">
+        </div>
+        <div class="tile">
+          <img src="images/smollcat.png" alt="smol cat" style="object-position: center 38%;">
+        </div>
+        <div class="tile">
+          <img src="images/cat-2.png" alt="baby cat" style="object-position: center center;">
+        </div>
+      </div>
+    </div>
+
   </div>
 </body>
 </html>
