@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiffany Ngan — Medical Student</title>
+  <title>Tiffany Ngan</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #f8f7f4;
-      --bg-alt:    #f2ede8;
-      --text:      #1a1a1a;
-      --muted:     #888;
-      --accent:    #8b7355;
-      --border:    #e4dbd2;
-      --max:       1080px;
+      --bg:       #fdf6f8;
+      --white:    #ffffff;
+      --blush:    #f7dde5;
+      --rose:     #d4849a;
+      --deep:     #b5607a;
+      --text:     #2e1f26;
+      --muted:    #b89aa3;
+      --border:   #f0d4db;
     }
 
     html { scroll-behavior: smooth; }
@@ -29,11 +30,11 @@
       line-height: 1.6;
     }
 
-    /* ── Fade-in ── */
+    /* ── Fade in ── */
     .fi {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.75s ease, transform 0.75s ease;
+      transform: translateY(18px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     .fi.in { opacity: 1; transform: none; }
 
@@ -41,464 +42,395 @@
     nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(248, 247, 244, 0.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      z-index: 10;
+      background: rgba(253, 246, 248, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      padding: 1.25rem 2.5rem;
+      padding: 1.1rem 2.5rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
     }
 
     .nav-name {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
-      font-size: 1.05rem;
-      letter-spacing: 0.04em;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.68rem;
+      font-size: 1rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--muted);
       text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-
-    /* ── Shared section layout ── */
-    section { padding: 7rem 2.5rem; }
-
-    .inner {
-      max-width: var(--max);
-      margin: 0 auto;
-    }
-
-    .label {
-      font-size: 0.65rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.2rem;
-    }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.2;
-      margin-bottom: 3rem;
     }
 
     /* ── Hero ── */
     #hero {
-      min-height: calc(100vh - 66px);
+      min-height: calc(100vh - 54px);
       display: flex;
+      flex-direction: column;
       align-items: center;
-      padding: 5rem 2.5rem;
+      justify-content: center;
+      padding: 5rem 2rem;
+      text-align: center;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-      width: 100%;
-      max-width: var(--max);
-      margin: 0 auto;
+    .hero-paw {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      display: block;
+      animation: sway 3s ease-in-out infinite;
     }
 
-    .hero-eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
+    @keyframes sway {
+      0%, 100% { transform: rotate(-5deg); }
+      50%       { transform: rotate(5deg); }
     }
 
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 400;
-      font-size: clamp(3.2rem, 6vw, 5.2rem);
-      line-height: 1.05;
-      margin-bottom: 1.8rem;
+      font-size: clamp(3.5rem, 10vw, 6.5rem);
+      line-height: 1.0;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
     }
 
-    .hero-tagline {
+    .hero-name em {
+      font-style: italic;
+      color: var(--rose);
+    }
+
+    .hero-tag {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
       color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
+      letter-spacing: 0.04em;
     }
 
-    .cta {
-      display: inline-block;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--text);
-      padding-bottom: 2px;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .cta:hover { color: var(--accent); border-color: var(--accent); }
-
-    .hero-photo {
-      aspect-ratio: 3 / 4;
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hero-tag span {
+      color: var(--rose);
+      font-style: normal;
     }
 
-    /* TODO: When adding Tiffany's photo, replace the placeholder div below with:
-       <img src="images/tiffany.jpg" alt="Tiffany Ngan" style="width:100%;height:100%;object-fit:cover;"> */
-    .photo-placeholder {
-      text-align: center;
-      color: var(--border);
-    }
-
-    .photo-placeholder svg {
-      width: 52px;
-      height: 52px;
-      display: block;
-      margin: 0 auto 1rem;
-    }
-
-    .photo-placeholder p {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--muted);
-    }
-
-    /* ── About ── */
-    #about { background: var(--bg-alt); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 3fr 2fr;
-      gap: 6rem;
-      align-items: start;
-    }
-
-    .about-body p {
-      font-size: 1rem;
-      line-height: 1.9;
-      color: #3d3d3d;
-      margin-bottom: 1.3rem;
-    }
-
-    .about-meta {
       display: flex;
       flex-direction: column;
-      gap: 1.8rem;
-      padding-top: 0.5rem;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .meta-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.35rem;
+    .scroll-hint::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 32px;
+      background: var(--border);
+      animation: drop 1.6s ease-in-out infinite;
     }
 
-    .meta-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      color: var(--text);
+    @keyframes drop {
+      0%   { transform: scaleY(0); transform-origin: top; }
+      50%  { transform: scaleY(1); transform-origin: top; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
     }
 
-    /* ── Interests ── */
-    .interests-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+    /* ── Gallery ── */
+    #gallery {
+      padding: 5rem 2rem 6rem;
     }
 
-    .interest-card {
-      padding: 2rem 1.75rem;
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-    }
-
-    .interest-icon {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .interest-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .interest-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    /* ── Contact ── */
-    #contact {
-      background: var(--bg-alt);
-      text-align: center;
-    }
-
-    .contact-inner {
-      max-width: 560px;
+    .gallery-inner {
+      max-width: 540px;
       margin: 0 auto;
     }
 
-    .contact-sub {
-      font-size: 0.92rem;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
+    .section-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 1rem;
     }
 
-    /* TODO: Replace with Tiffany's actual email */
-    .contact-email {
-      display: inline-block;
+    .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
       color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 4px;
-      margin-bottom: 2.5rem;
-      transition: color 0.2s, border-color 0.2s;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
     }
-    .contact-email:hover { color: var(--accent); border-color: var(--accent); }
 
-    .social-row {
+    .section-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Carousel */
+    .carousel-wrap {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--blush);
+      box-shadow: 0 8px 48px rgba(180, 96, 122, 0.1);
+      aspect-ratio: 1 / 1;
+    }
+
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .carousel-track img {
+      min-width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(6px);
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 2;
+    }
+
+    .carousel-btn:hover { background: rgba(255,255,255,0.95); transform: translateY(-50%) scale(1.05); }
+    .carousel-btn.prev { left: 14px; }
+    .carousel-btn.next { right: 14px; }
+
+    .carousel-btn svg {
+      width: 13px;
+      height: 13px;
+      stroke: var(--deep);
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .carousel-dots {
       display: flex;
       justify-content: center;
-      gap: 2rem;
+      gap: 7px;
+      margin-top: 1.2rem;
     }
 
-    /* TODO: Replace # hrefs with actual profile URLs */
-    .social-link {
+    .carousel-dots button {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: none;
+      background: var(--border);
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .carousel-dots button.active {
+      background: var(--rose);
+      transform: scale(1.4);
+    }
+
+    /* ── Note ── */
+    #note {
+      padding: 0 2rem 7rem;
+    }
+
+    .note-card {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.8rem 3rem;
+      text-align: center;
+      box-shadow: 0 4px 32px rgba(180, 96, 122, 0.07);
+    }
+
+    .note-glyph {
+      font-size: 1.6rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    .note-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.85;
+      color: #7a4f5c;
+    }
+
+    .note-sig {
+      margin-top: 1.5rem;
       font-size: 0.65rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
     }
-    .social-link:hover { color: var(--text); }
 
     /* ── Footer ── */
     footer {
-      padding: 2rem 2.5rem;
-      border-top: 1px solid var(--border);
+      padding: 2rem;
       text-align: center;
+      border-top: 1px solid var(--border);
     }
 
     footer p {
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: var(--muted);
     }
 
     /* ── Responsive ── */
-    @media (max-width: 800px) {
-      nav { padding: 1.1rem 1.5rem; }
-      section { padding: 5rem 1.5rem; }
+    @media (max-width: 600px) {
       #hero { padding: 4rem 1.5rem; }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .hero-photo {
-        aspect-ratio: 4 / 3;
-        max-height: 280px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .interests-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-links { gap: 1.5rem; }
+      #gallery, #note { padding-left: 1.5rem; padding-right: 1.5rem; }
+      .note-card { padding: 2rem 1.75rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── Navigation ── -->
+  <!-- ── Nav ── -->
   <nav>
     <a href="#" class="nav-name">Tiffany Ngan</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#interests">Interests</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
   </nav>
 
   <!-- ── Hero ── -->
-  <section id="hero">
-    <div class="hero-grid">
+  <section id="hero" style="position:relative;">
+    <span class="hero-paw fi">🐾</span>
+    <h1 class="hero-name fi" style="transition-delay:0.1s;">
+      Tiffany<br><em>Ngan</em>
+    </h1>
+    <p class="hero-tag fi" style="transition-delay:0.2s;">
+      香港 &nbsp;·&nbsp; cat person &nbsp;·&nbsp; <span>good taste</span>
+    </p>
+    <div class="scroll-hint fi" style="transition-delay:0.4s;">scroll</div>
+  </section>
 
-      <div class="fi">
-        <p class="hero-eyebrow">Medical Student &middot; Hong Kong</p>
-        <h1 class="hero-name">Tiffany<br>Ngan</h1>
-        <!-- TODO: Edit tagline as desired -->
-        <p class="hero-tagline">
-          Driven by curiosity.<br>
-          Grounded in care.
-        </p>
-        <a href="#about" class="cta">Learn more</a>
-      </div>
+  <!-- ── Gallery ── -->
+  <section id="gallery">
+    <div class="gallery-inner">
+      <p class="section-label fi">the gallery</p>
+      <h2 class="section-title fi">cute cats only.</h2>
+      <p class="section-sub fi">a very curated, very important collection.</p>
 
-      <div class="hero-photo fi" style="transition-delay: 0.15s;">
-        <!-- TODO: Replace this block with a photo:
-             <img src="images/tiffany.jpg" alt="Tiffany Ngan" style="width:100%;height:100%;object-fit:cover;">
-        -->
-        <div class="photo-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-          <p>Photo coming soon</p>
+      <div class="carousel-wrap fi" style="transition-delay:0.1s;">
+        <div class="carousel-track" id="track">
+          <img src="images/angycat.png"        alt="angy cat"         style="object-position: center center;">
+          <img src="images/white-cat.png"       alt="white cat"        style="object-position: center center;">
+          <img src="images/princesscat.png"     alt="princess cat"     style="object-position: center 30%;">
+          <img src="images/pinksweatercat.png"  alt="pink sweater cat" style="object-position: center 38%;">
+          <img src="images/hatcat.png"          alt="hat cat"          style="object-position: center 38%;">
+          <img src="images/kingcat.png"         alt="king cat"         style="object-position: center 38%;">
+          <img src="images/carcat.png"          alt="car cat"          style="object-position: center 42%;">
+          <img src="images/smollcat.png"        alt="smol cat"         style="object-position: center 38%;">
+          <img src="images/cat-2.png"           alt="baby cat"         style="object-position: center center;">
+          <img src="images/sleeping-princess-cat.png" alt="sleeping cat" style="object-position: center center;">
         </div>
+        <button class="carousel-btn prev" id="prev" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="carousel-btn next" id="next" aria-label="Next">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
-
+      <div class="carousel-dots" id="dots"></div>
     </div>
   </section>
 
-  <!-- ── About ── -->
-  <section id="about">
-    <div class="inner">
-      <p class="label fi">About</p>
-      <h2 class="section-title fi">A little about me.</h2>
-      <div class="about-grid">
-
-        <div class="about-body fi">
-          <!-- TODO: Edit bio text as needed — written in third person but easy to switch to first person -->
-          <p>
-            Tiffany Ngan is a medical student based in Hong Kong, pursuing medicine with focus, warmth, and genuine intellectual curiosity. With an international background and a deeply empathetic nature, she brings both rigour and humanity to everything she does.
-          </p>
-          <p>
-            She is drawn to the human side of medicine — the stories behind symptoms, the relationships built in clinic rooms, and the profound responsibility of showing up for people at their most vulnerable. While she has yet to settle on a specialty, she is exploring her path with open eyes and real enthusiasm.
-          </p>
-          <p>
-            Outside of medicine, Tiffany is a reader, a traveller at heart, and someone who believes the best doctors are first and foremost thoughtful people.
-          </p>
-        </div>
-
-        <div class="about-meta fi" style="transition-delay: 0.1s;">
-          <div class="meta-item">
-            <p class="meta-label">Based in</p>
-            <p class="meta-value">Hong Kong</p>
-          </div>
-          <div class="meta-item">
-            <p class="meta-label">Currently</p>
-            <p class="meta-value">Medical Student</p>
-          </div>
-          <div class="meta-item">
-            <!-- TODO: Edit background detail if desired -->
-            <p class="meta-label">Background</p>
-            <p class="meta-value">International</p>
-          </div>
-          <div class="meta-item">
-            <p class="meta-label">Languages</p>
-            <!-- TODO: Edit languages as appropriate -->
-            <p class="meta-value">English, Cantonese</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Interests ── -->
-  <section id="interests">
-    <div class="inner">
-      <p class="label fi">Beyond Medicine</p>
-      <h2 class="section-title fi">What I'm about.</h2>
-      <div class="interests-grid">
-
-        <!-- TODO: Edit interest cards — icons, titles, descriptions — as desired -->
-        <div class="interest-card fi">
-          <div class="interest-icon">📖</div>
-          <h3 class="interest-name">Reading</h3>
-          <p class="interest-desc">From medical literature to literary fiction. Always something in hand, always something to think about.</p>
-        </div>
-
-        <div class="interest-card fi" style="transition-delay: 0.1s;">
-          <div class="interest-icon">✈️</div>
-          <h3 class="interest-name">Travel</h3>
-          <p class="interest-desc">Drawn to new places, unfamiliar languages, and the perspective that only comes from being somewhere new.</p>
-        </div>
-
-        <div class="interest-card fi" style="transition-delay: 0.2s;">
-          <div class="interest-icon">🌿</div>
-          <h3 class="interest-name">Wellness</h3>
-          <p class="interest-desc">Believes caring well for others starts with caring well for yourself — in mind, body, and spirit.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Contact ── -->
-  <section id="contact">
-    <div class="inner contact-inner">
-      <p class="label fi">Contact</p>
-      <h2 class="section-title fi">Get in touch.</h2>
-      <p class="contact-sub fi">
-        Open to connecting with colleagues, collaborators,<br>and anyone passionate about medicine and ideas.
+  <!-- ── Note ── -->
+  <section id="note">
+    <div class="note-card fi">
+      <span class="note-glyph">🐱</span>
+      <p class="note-text">
+        wouldn't it be nice to be a cat —<br>
+        soft life, no worries,<br>
+        just sleeping in warm places<br>
+        and being loved.
       </p>
-      <!-- TODO: Replace with Tiffany's actual email address -->
-      <a href="mailto:hello@tiffanyngan.com" class="contact-email fi">hello@tiffanyngan.com</a>
-      <div class="social-row fi">
-        <!-- TODO: Replace # with actual profile URLs -->
-        <a href="#" class="social-link">LinkedIn</a>
-        <a href="#" class="social-link">Instagram</a>
-      </div>
+      <p class="note-sig">— tiffany ngan, probably</p>
     </div>
   </section>
 
   <!-- ── Footer ── -->
   <footer>
-    <p>&copy; 2025 Tiffany Ngan &middot; Hong Kong</p>
+    <p>tiffanyngan.com &nbsp;·&nbsp; made with ♡</p>
   </footer>
 
   <script>
-    // Fade-in on scroll via IntersectionObserver
-    const observer = new IntersectionObserver(
+    // Fade-in observer
+    const obs = new IntersectionObserver(
       entries => entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); }
+        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
       }),
       { threshold: 0.08 }
     );
-    document.querySelectorAll('.fi').forEach(el => observer.observe(el));
+    document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+
+    // Carousel
+    const track  = document.getElementById('track');
+    const dotsEl = document.getElementById('dots');
+    const imgs   = track.querySelectorAll('img');
+    let current  = 0;
+
+    imgs.forEach((_, i) => {
+      const d = document.createElement('button');
+      if (i === 0) d.classList.add('active');
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+    });
+
+    function goTo(n) {
+      current = (n + imgs.length) % imgs.length;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsEl.querySelectorAll('button').forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    document.getElementById('prev').addEventListener('click', () => goTo(current - 1));
+    document.getElementById('next').addEventListener('click', () => goTo(current + 1));
+
+    // Swipe
+    let sx = 0;
+    track.addEventListener('pointerdown', e => { sx = e.clientX; });
+    track.addEventListener('pointerup',   e => { const d = sx - e.clientX; if (Math.abs(d) > 40) goTo(current + (d > 0 ? 1 : -1)); });
+
+    // Auto-advance
+    let timer = setInterval(() => goTo(current + 1), 3800);
+    const wrap = track.closest('.carousel-wrap');
+    wrap.addEventListener('mouseenter', () => clearInterval(timer));
+    wrap.addEventListener('mouseleave', () => { timer = setInterval(() => goTo(current + 1), 3800); });
   </script>
 
 </body>
